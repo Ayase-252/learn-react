@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import HelloWorld from './components/HelloWorld'
 import Clock from './components/Clock'
-import { Link, Route, Switch, NavLink, Redirect } from 'react-router-dom'
+import Blog from './pages/Blog'
+import { Link, Route, Switch, NavLink } from 'react-router-dom'
 import './App.css'
 
 const Index = () => <h2>Home</h2>
@@ -17,14 +18,21 @@ class App extends Component {
           <Link to='/about/'>About</Link>
           <Link to='/users/'>Users</Link>
           <Link to='/hello-world/'>Hello World</Link>
-          <NavLink to='/clock/' activeStyle={{color: 'red'}}>Clock</NavLink>
+          <NavLink to='/clock/' activeStyle={{ color: 'red' }}>
+            Clock
+          </NavLink>
+          <Link to='/blog'>Blog</Link>
         </nav>
         <Switch>
-          <Route path='/' exact component={Index}></Route>
-          <Route path='/about/' component={About}></Route>
-          <Route path='/users/' component={Users}></Route>
-          <Route path='/hello-world/' render={() => <HelloWorld name='Mr.J'></HelloWorld>}></Route>
-          <Route path='/clock/' component={Clock}></Route>
+          <Route path='/' exact component={Index} />
+          <Route path='/about/' component={About} />
+          <Route path='/users/' component={Users} />
+          <Route
+            path='/hello-world/'
+            render={() => <HelloWorld name='Mr.J' />}
+          />
+          <Route path='/clock/' component={Clock} />
+          <Route path='/blog/' component={Blog} />
         </Switch>
       </div>
     )
