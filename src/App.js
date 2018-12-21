@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import HelloWorld from './components/HelloWorld'
 import Clock from './components/Clock'
 import Blog from './pages/Blog'
+import Todo from './pages/Todo'
 import { Link, Route, Switch, NavLink } from 'react-router-dom'
 import './App.css'
 
@@ -21,7 +22,8 @@ class App extends Component {
           <NavLink to='/clock/' activeStyle={{ color: 'red' }}>
             Clock
           </NavLink>
-          <Link to='/blog'>Blog</Link>
+          <Link to='/blog/'>Blog</Link>
+          <Link to='/todo/'></Link>
         </nav>
         <Switch>
           <Route path='/' exact component={Index} />
@@ -33,6 +35,7 @@ class App extends Component {
           />
           <Route path='/clock/' component={Clock} />
           <Route path='/blog/' component={Blog} />
+          <Route path='/todo/' component={Todo}></Route>
         </Switch>
       </div>
     )
